@@ -564,14 +564,27 @@ a { color: var(--burgundy); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
-  .header { flex-direction: column; min-height: auto; padding: 12px 3vw; gap: 10px; }
-  .brand { width: 160px; min-height: 70px; }
-  .brand img { max-height: 68px; }
-  .nav { padding: 10px 14px; font-size: 11px; }
-  .main-content { padding-top: 190px; }
-  .home { min-height: calc(100vh - 190px); }
+  .header {
+    flex-direction: column; align-items: center;
+    min-height: auto; padding: 14px 3vw 16px; gap: 12px;
+  }
+  .brand { width: 170px; min-height: auto; justify-content: center; }
+  .brand img { max-height: 62px; }
+  .nav-list {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px; width: 100%;
+  }
+  .nav {
+    flex: 0 1 calc(25% - 6px);
+    padding: 10px 2px; font-size: 10px; letter-spacing: 0; text-align: center;
+  }
+  .main-content { padding-top: 195px; }
+  .home { min-height: calc(100vh - 195px); }
   .media-page, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .media-left { text-align: center; }
+}
+@media (max-width: 380px) {
+  .nav { flex-basis: calc(50% - 4px); }
 }
 @media (max-width: 640px) {
   .street-copy img { height: clamp(420px, 68vh, 800px); }
